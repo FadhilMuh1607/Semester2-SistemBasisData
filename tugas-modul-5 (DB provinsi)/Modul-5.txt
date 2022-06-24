@@ -1,0 +1,36 @@
+Modul 5
+Data Manipulation Language 
+. LEFT JOIN
+. RIGHT JOIN
+
+- Membuat Database bernama provinsi
+- Membuat tabel bernama kota
+- Membuat tabel bernama provinsi
+
+=====
+
+.LEFT JOIN, berfungsi untuk menghubungkan tabel dan menampilkan semua data (kiri) pada tabel yang tidak 
+            berhubungan, sedangkan data yang kosong akan bernilai null
+
+   Penulisan Sintaks dari Left Join :
+	SELECT * FROM tabel1 LEFT JOIN tabel2 ON kolom_tabel1.id = kolom_tabel2.id
+
+   Contoh kasus LEFT JOIN pada Database provinsi 
+   SELECT * FROM kota LEFT JOIN provinsi ON kota.id_provinsi = provinsi.id
+
+   jika kita lihat outputnya ia akan menyamakan antara id_provinsi dari tabel kota dan id dari tabel provinsi
+   diakhir, dan mengecek apakah terdapat relasi, jika data dari kanan tidak sama dengan yang kiri maka 
+   ia akan bernilai null, alias tidak ada. yang dimaksud disini adalah papua barat
+
+=====
+
+.RIGHT JOIN, konsepnya hampir sama dengan left join, cuman ia menampilkan semua data dengan posisi dikanan
+
+   Penulisan Sintaks dari Right Join :
+	SELECT * FROM tabel1 RIGHT JOIN tabel2 ON kolom_tabel1.id = kolom_tabel2.id
+
+   Contoh kasus RIGHT JOIN pada Database provinsi
+   SELECT * FROM kota RIGHT JOIN provinsi ON kota.id_provinsi = provinsi.id
+
+   untuk outputnya yang tidak ada relasi ia akan bertuliskan null. Jika sebelumnya di LEFT JOIN tulisan null ada
+   dibagian kanan, maka untuk RIGHT JOIN tulisannya ada dibagian kiri, untuk kota yang dimaksud adalah medan
