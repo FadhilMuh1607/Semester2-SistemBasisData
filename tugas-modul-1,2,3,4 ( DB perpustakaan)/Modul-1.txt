@@ -1,0 +1,62 @@
+Modul 1 
+Data Definition Language
+. CREATE
+. DROP
+. ALTER
+
+- Membuat Database Perpustakaan
+- Membuat tabel Anggota
+- Membuat tabel Buku
+- Membuat tabel Peminjaman
+
+=====
+
+- Membuat Database Perpustakaan
+
+    Penulisan Sintaks :
+    . CREATE DATABASE PERPUSTAKAAN
+
+=====
+
+- Membuat table anggota 
+
+    Penulisan Sintaks :
+    . CREATE TABLE Anggota (
+      kode_anggota CHAR(10) NOT NULL,
+      nama VARCHAR(30) NOT NULL,
+      nim CHAR(10) NOT NULL,
+      prodi VARCHAR(20) NOT NULL,
+      angkatan INT(11),
+      alamat VARCHAR(40) NOT NULL,
+      PRIMARY KEY (kode_anggota)
+);
+
+=====
+
+- Membuat table buku
+
+     Penulisan Sintaks :
+     . CREATE TABLE Buku (
+       id_buku CHAR(10) NOT NULL,
+       judul VARCHAR(40) NOT NULL,
+       tahun_terbit CHAR(6) NULL,
+       pengarang VARCHAR(30) NULL,
+       penerbit VARCHAR(30) NULL,
+       PRIMARY KEY (id_buku)
+);
+
+=====
+
+- Membuat table peminjaman
+
+     Penulisan Sintaks :
+     . CREATE TABLE Peminjaman (
+       kode_pinjam CHAR(10) NOT NULL,
+       kode_anggota CHAR(10) NOT NULL,
+       id_buku CHAR(10) NOT NULL,
+       tanggal_pinjam DATE,
+       tanggal_kembali DATE,
+       Denda INT(11),
+       PRIMARY KEY (kode_pinjam)
+       FOREIGN KEY (kode_anggota) REFERENCES Anggota(kode_anggota)
+       FOREIGN KEY (id_buku) REFERENCES Buku (id_buku)

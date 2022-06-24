@@ -1,0 +1,36 @@
+Modul 3
+Data Manipulation Language (DML)
+. SELECT :
+  - SELECT ALL
+  - SELECT FIELD
+  - SELECT RECORD
+
+=====
+
+1. SELECT ALL,
+   Berfungsi untuk menampilkan semua record dan semua field didalam sebuah tabel
+   
+   Penulisan Sintaks :
+   SELECT * FROM nama_tabel
+   SELECT * FROM `Anggota`   
+
+=====
+
+2. SELECT FIELD
+   Berfungsi untuk menampilkan semua record yang ada tetapi hanya field tertentu saja
+   
+   Penulisan Sintaks :
+
+   SELECT field1, field2 ... FROM nama_tabel
+   SELECT `nama`, `prodi`, `alamat` FROM `Anggota`
+
+=====
+
+3. SELECT RECORD (WHERE)
+   Berfungsi untuk menampikan isi dari record tertentu saja. Where ini juga bisa digunakan 
+   untuk SELECT All ataupun SELECT FIELD
+
+   Penulisan Sintaks :
+
+   SELECT (ALL/FIELD) FROM nama_tabel WHERE nama_field=`value`
+   SELECT `nama`, `nim`, `alamat` FROM `Anggota` WHERE kode_anggota='P-001'

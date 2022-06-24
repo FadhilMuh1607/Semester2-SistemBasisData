@@ -1,0 +1,68 @@
+Modul 2
+Data Manipulasi Language (DML)
+. INSERT
+. UPDATE
+. DELETE
+. SELECT
+
+=====
+
+1. INSERT,
+   Berfungsi untuk menambahkan data/record pada tabel
+   
+   Penulisan Sintaks : 
+   * Jika kita hanya ingin mengisi satu record didalam tabel, sintaksnya :
+   INSERT INTO tblname
+   (colom.....) VALUES (values.....)
+
+   * Jika kita ingin mengisi semua record dalam tabel :
+   INSERT INTO tblname
+   VALUES (value.....)
+   INSERT INTO `Anggota` (`kode_anggota`, `nama`, `nim`, `prodi`, `angkatan`, `alamat`) VALUES
+   ('P-001', 'Mitsurugi Kyouya' '213051000', 'Teknik Komputer', '2022', 'Sukabumi')
+
+=====
+
+2. UPDATE,
+   Berfungsi untuk merubah record/data
+   
+   Penulisan Sintaks :
+   * Sintaks dari Update
+   UPDATE tblnama SET field='ekspresi' WHERE kondisi
+   = field, adalah atribut dari tabel
+   = ekspresi, merupakan value dari yang akan di-update
+   = kondisi, merupakan elemen yang akan di-seleksi, biasanya adalah primary-key
+
+   UPDATE `Anggota` SET `nama`='Heinz Guderian', `angkatan`='1920', `alamat`='Prusia' WHERE
+   `kode_anggota`='P-001';
+
+=====
+
+3. DELETE,
+   Berfungsi untuk menghapus record
+   
+   Penulisan Sintaks :
+   * Sintaks dari Delete
+   DELETE FROM tblnama WHERE kondisi
+   = kondisi, merupakan elemen yang akan di-seleksi, biasanya adalah primary-key
+
+   DELETE FROM `Anggota` WHERE `kode_anggota` = 'P-001'
+
+=====
+
+4. SELECT
+   Berfungsi untuk menampilkan record pada tabel
+
+   Penulisan Sintaks :   
+   * menyeleksi semua field
+   SELECT * FROM tblnama WHERE kondisi
+   = '*', tanda bintang menunjukkan bahwa kita menyeleksi semua field
+   
+   * jika hanya ingin sebagian saja, kita tidak perlu menuliskan tanda bintangnya
+   SELECT colname1, colname2.... FROM tblnama WHERE kondisi
+   = colname, yakni adalah field
+   = kondisi, merupakan elemen yang akan di-seleksi, biasanya adalah primary-key    
+
+   SELECT * FROM `Anggota` WHERE `kode_anggota` = 'P-001'
+   
+   SELECT `nama`, `prodi` FROM `Anggota` WHERE `kode_anggota`='P-001'

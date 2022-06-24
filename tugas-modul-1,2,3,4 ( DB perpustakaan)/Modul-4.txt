@@ -1,0 +1,53 @@
+Modul 4
+Data Manipulation Language (DML)
+. INNER JOIN
+
+=====
+
+. INNER JOIN, Berfungsi untuk menyatukan/menggabungkan isi kolom dari 2 tabel atau lebih menggunakan Query 
+   select ... INNER JOIN
+  
+  Langkah-langkah untuk melakukan INNER JOIN
+
+ 1. Mempersiapkan tabel yang akan digabungkan (join)
+ 2. Mengamati isi kolom data yang akan digabungkan
+    Simpelnya cari diantara kedua tabel tersebut yang mempunyai atribut yang sama
+    
+    Penulisan sintaks dari INNER JOIN
+    Sintaks : SELECT namaKolomTampil FROM namaTabelPertama INNER JOIN 
+    namaTabelKedua ON namaTabelPertama.namaKolomJoinTabelPertama = namaTabelKedua.namaKolomJoinTabelKedua
+    Catatan :
+	*namaKolomTampil, nama dari kolom yang akan kita tampilkan, bisa semua pada tabel atau kolom tertentu saja
+	*namaTabelPertama, adalah nama tabel yang akan kita gabungkan
+	*namaTabelKedua, adalah nama tabel kedua yang akan kita gabungkan dengan tabel pertama
+	*namaTabelPertama.namaKolomJoinTabelPertama, adalah nama tabel dan juga nama kolom yang akan digunakan sebagai join 
+             dari tabel pertama
+	*namaTabelKedua.namaKolomJoinTabelKedua, adalah nama tabel kedua dan nama kolom yang akan digunakan sebagai join dari
+             tabel kedua
+		
+   note : 
+   - Syarat dari INNER JOIN adalah kedua tabel harus memiliki sebuah kolom dengan nilai yang sama
+     yang akan digunakan dalam proses join
+
+   ============================================================================================================
+
+   Contoh sintaks misalnya pada database perpustakaan
+   kita akan menampilkan informasi mengenai, judul_buku, tahun_terbit, pengarang, kode_anggota, tanggal_pinjam, tanggal_kembali
+   dari tabel Buku dan Peminjaman
+
+   dari kedua tabel tersebut terdapat field, yang sama yakni tabel id.buku. Maka id.bukulah yang akan kita gunakan sebagai join
+
+   Penulisan Sintaksnya adalah sebagai berikut : 
+	SELECT nama, nim, prodi, id_buku, tanggal_pinjam, tanggal_kembali FROM anggota INNER JOIN peminjaman ON anggota.kode_anggota = peminjaman.kode_anggota
+
+   Maka outputnya ia akan menampilkan apa yang kita seleksi, meski dari tabel berbeda
+
+   ============================================================================================================
+
+   Begitu juga jika kita, ingin menampilkan nama, jabatan, jam_tugas, tanggal_pinjam, tanggal_kembali, kode_anggota 
+   pada tabel petugas dan peminjaman
+
+   Penulisan Sintaksnya adalah sebagai berikut :
+	SELECT nama, jabatan, jam_tugas, tanggal_pinjam, tanggal_kembali, kode_anggota FROM petugas INNER JOIN peminjaman ON petugas.kode_petugas = peminjaman.kode_petugas;
+
+   Maka output yang akan keluar ialah apa yang kita select, meski berbeda tabel namun fungsi dari INNER JOIN adalah untuk menggabungkan tabel
