@@ -1,0 +1,64 @@
+Modul 7
+Data Manipulation Language (DML)
+. AVG
+. COUNT
+. MAX
+. MIN
+. SUM
+
+- Membuat tabel dengan nama "gaji" di Database buku
+
+=====
+
+. AVG, berfungsi untuk menghitung rata-rata
+
+  sebagai contoh untuk menghitung rata-rata pada tabel "tblgaji"
+
+  Penulisan Sintaks :
+  SELECT AVG (gaji) FROM tblgaji
+
+  Output yang keluar adalah nilai dari rata-rata yang terdapat pada tabel "tblgaji"
+
+=====
+
+. COUNT, adalah fungsi yang digunakan untuk menghitung cacah data
+
+  misal contohnya untuk menghitung jumlah pengarang per kota
+
+  Penulisan Sintaks :
+  SELECT kota, COUNT (kota) FROM tblpengarang GROUP BY kota
+
+  outputnya kita bisa melihat jumlah pengarang dari kota a adalah sekian
+
+=====
+
+. MAX, berfungsi untuk menampilkan angka terbesar
+
+  misal kita akan melihat angka paling besar dalam tabel "tblgaji"
+
+  Penulisan Sintaks :
+  SELECT MAX(gaji) FROM tblgaji
+
+  Outputnya ia akan menampilkan angka yang paling besar
+
+=====
+
+. MIN, berfungsi untuk menampilkan nilai terkecil
+
+  misal kita akan melihat angka terkecil didalam tabel "tblgaji"
+
+  Penulisan Sintaks :
+  SELECT MIN(gaji) FROM tblgaji
+
+  hasil dari output ini akan menampilkan nilai paling kecil didalam tabel "tblgaji"
+
+=====
+
+. SUM, sesuai namanya SUM berfungsi untuk menjumlahkan nilai
+
+  contohnya kita akan men-totalkan jumlah dari tabel "tblgaji"
+
+  Penulisan Sintaks :
+  SELECT SUM(gaji) FROM tblgaji
+
+  outputnya ia akan menampilkan jumlah total dari tabel "tblgaji"

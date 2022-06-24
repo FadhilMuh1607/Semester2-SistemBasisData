@@ -1,0 +1,67 @@
+Modul 8
+Operator
+
+. AND
+. OR
+. NOT
+. BETWEEN-AND
+. IN
+. LIKE
+
+=====
+
+. AND, untuk menyatakan keadaan "dan"
+
+  sebagai contoh, untuk menampilkan daftar nama pengarang dengan kode 1 sampai 6
+ 
+  Penulisan Sintaks :
+  SELECT kd_peng, nama_peng FROM tblpengarang WHERE kd_peng >= 1 AND kd_peng <= 6
+  
+  Outputnya ia akan menampilkan kd_peng dari 1 sampai 6
+
+=====
+
+. OR, untuk menyatakan keadaan "atau"
+
+  sebagai contoh, menampilkan daftar nama pengarang yang tinggal di bandung dan jakarta
+
+  Penulisan Sintaks :
+  SELECT kd_peng, nama_peng, kota, WHERE kota = 'bandung' or kota = 'jakarta'
+
+=====
+
+. NOT, untuk menyatakan keadaan "tidak"
+
+  sebagai contoh, menampilkan daftar nama pengarang yang tidak tinggal di Jakarta
+
+  Penulisan Sintaks :
+  SELECT kd_peng, nama_peng, kota FROM tblpengarang WHERE NOT kota = 'jakarta'
+
+=====
+
+. BETWEEN-AND, untuk menangani operasi "jangkauan"
+
+  sebagai contoh, untuk menampilkan daftar nama pengarang dengan kode 4 sampai 9
+
+  Penulisan Sintaks : 
+  SELECT kd_peng, nama_peng FROM tblpengarang WHERE kd_peng BETWEEN 4 AND 9
+
+=====
+
+. IN, untuk menyatakan keadaan "salah satu diantara"
+
+  sebagai contoh untuk menampilkan daftar nama pengarang yang tinggal diYogya, Bandung, dan Solo 
+
+  Penulisan Sintaks : 
+  SELECT kd_peng, nama_peng, kota FROM tblpengarang WHERE kota in ('Yogya', 'Bandung', 'Solo')
+
+=====
+
+. LIKE, digunakan untuk pencocokan
+  
+  sebagai contoh menampilkan daftar pengarang yang diawali dengan huruf "A" 
+
+  Penulisan Sintaks :
+  SELECT nama_peng, kota FROM tblpengarang WHERE nama_peng LIKE 'A%'
+
+

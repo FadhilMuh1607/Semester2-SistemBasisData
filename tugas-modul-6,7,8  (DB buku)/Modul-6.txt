@@ -1,0 +1,49 @@
+Modul 6
+Data Manipulation Language 
+. ORDER BY
+. GROUP BY
+. GROUP BY HAVING
+
+
+- Membuat Database bernama BUKU
+- Membuat tabel dengan nama "tblpengarang"
+- Membuat tabel dengan nama "tblbuku"
+
+=====
+
+. ORDER BY, berfungsi untuk mengurutkan data menurut suatu kolom
+
+  contohnya menampilkan field, kode_peng dan nama_peng, namun yang kita urutkan adalah nama_peng saja
+
+  Penulisan Sintaks dari ORDER BY :
+  SELECT kd_peng, nama_peng FROM `tblpengarang` ORDER BY nama_peng
+
+  jika kita melihat outputnya, maka kd_pen akan menampilkan secara acak, namun untuk nama_peng ia akan berurut 
+  sesuai abjad
+
+  kita juga bisa urutkan secara Descending (dari abjad z - a) dengan cara menambahkan DESC pada sintaksnya
+  SELECT kd_peng, nama_peng FROM `tblpengarang` ORDER BY nama_peng DESC
+
+=====
+
+. GROUP BY, berfungsi untuk mengelompokkan data 
+
+  contohnya untuk menampilkan isi tabel tblpengarang yang dikelompokkan berdasarkan kota
+
+  Penulisan Sintak dari GROUP BY :
+  SELECT Kota FROM `tblpengarang` GROUP BY kota
+
+  Jika kita lihat pada tabel, isi data dari tabel tblpengarang terdapat value dengan kota yang sama, 
+  tetapi pada output menggunakan GROUP BY kita bisa melihat secara singkat tanpa ada duplikasi
+
+=====
+
+. GROUP BY HAVING, disediakan untuk mendukung klausa GROUP BY
+
+  contohnya kita ingin melihat pengarang yang pada data kotanya lebih dari satu
+
+  Penulisan Sintaks dari GROUP BY HAVING
+  SELECT nama_peng, kota FROM `tblpengarang` GROUP BY kota HAVING COUNT(kota)>1
+
+  hasil dari outputnya ia akan menampilkan nama_peng, dan kota. Meski ia cuma menampilkannya 1 mewakili yang lain
+
